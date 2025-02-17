@@ -7,11 +7,14 @@ def main():
     print(characters)
 
 def characterCount(text):
-    lower_text = text.lower()
-    freq = {}
-    for c in set(lower_text):
-        freq[c] = text.count(c)
-    return freq
+    counter = {}
+    for c in text:
+        lowered = c.lower()
+        if lowered in counter:
+            counter[lowered] += 1
+        else:
+            counter[lowered] = 1
+    return counter
 
 def wordCoun(text):
     words = text.split()
